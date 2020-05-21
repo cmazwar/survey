@@ -35,10 +35,10 @@ export default class Survey extends React.Component {
         console.log(data);
         for (const key in data) {
             if (data.hasOwnProperty(key)) {
-                if (data[key]=="Strongly Disagree") {
+                if (data[key]=="Strongly Disagree" || data[key]=="Plain" || data[key]=="dull"|| data[key]=="Boring") {
                     data[key]="1"
                 }
-                if (data[key]=="Strongly Agree") {
+                if (data[key]=="Strongly Agree" || data[key]=="Interesting"|| data[key]=="Captivating"|| data[key]=="Enjoyable") {
                     data[key]="5"
                 }
             }
@@ -198,7 +198,6 @@ export default class Survey extends React.Component {
                 <Option value="3">3 </Option>
                 <Option value="4">4</Option>
                 <Option value="5">5 </Option>
-
                 <Option value="6">Captivating</Option>
             </Select><Select id="wcool" question={this.state.website+" is cool?"}>
                 <Option value="0">Strongly Disagree</Option>
@@ -206,7 +205,6 @@ export default class Survey extends React.Component {
                 <Option value="3">3 </Option>
                 <Option value="4">4</Option>
                 <Option value="5">5 </Option>
-
                 <Option value="6">Strongly Agree</Option>
             </Select>
                 <Select id="wcmind"
@@ -216,7 +214,6 @@ export default class Survey extends React.Component {
                     <Option value="3">3 </Option>
                     <Option value="4">4</Option>
                     <Option value="5">5 </Option>
-
                     <Option value="6">Strongly Agree</Option>
                 </Select>
                 <Select id="wcthings"
